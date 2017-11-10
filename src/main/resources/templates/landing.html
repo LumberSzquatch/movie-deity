@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>General Landing Page</title>
@@ -10,139 +9,11 @@
     <script th:src="@{/webjars/jquery/2.2.4/jquery.min.js}"></script>
     <script th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
 
-    <!-- EXTRACT THIS CSS TO EXTERNAL FILE -->
-    <style>
-        body {
-            font: 400 15px Lato, sans-serif;
-            line-height: 1.8;
-            color: #818181;
-        }
-        h2 {
-            font-size: 24px;
-            text-transform: uppercase;
-            color: #303030;
-            font-weight: 600;
-            margin-bottom: 30px;
-        }
-        h4 {
-            font-size: 19px;
-            line-height: 1.375em;
-            color: #303030;
-            font-weight: 400;
-            margin-bottom: 30px;
-        }
-        .jumbotron {
-            background-color: steelblue;
-            color: #fff;
-            padding: 100px 25px;
-            font-family: Montserrat, sans-serif;
-        }
-        .container-fluid {
-            padding: 60px 50px;
-        }
-        .bg-grey {
-            background-color: #f6f6f6;
-        }
-        .logo-small {
-            color: steelblue;
-            font-size: 50px;
-        }
-        .logo {
-            color: steelblue;
-            font-size: 200px;
-        }
-
-        .carousel-control.right, .carousel-control.left {
-            background-image: none;
-            color: steelblue;
-        }
-        .carousel-indicators li {
-            border-color: steelblue;
-        }
-        .carousel-indicators li.active {
-            background-color: steelblue;
-        }
-        .item h4 {
-            font-size: 19px;
-            line-height: 1.375em;
-            font-weight: 400;
-            font-style: italic;
-            margin: 70px 0;
-        }
-        .item span {
-            font-style: normal;
-        }
-        .navbar {
-            margin-bottom: 0;
-            background-color: steelblue;
-            z-index: 9999;
-            border: 0;
-            font-size: 12px !important;
-            line-height: 1.42857143 !important;
-            letter-spacing: 4px;
-            border-radius: 0;
-            font-family: Montserrat, sans-serif;
-        }
-        .navbar li a, .navbar .navbar-brand {
-            color: #fff !important;
-        }
-        .navbar-nav li a:hover, .navbar-nav li.active a {
-            color: steelblue !important;
-            background-color: #fff !important;
-        }
-        .navbar-default .navbar-toggle {
-            border-color: transparent;
-            color: #fff !important;
-        }
-        footer .glyphicon {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: steelblue;
-        }
-        .slideanim {visibility:hidden;}
-        .slide {
-            animation-name: slide;
-            -webkit-animation-name: slide;
-            animation-duration: 1s;
-            -webkit-animation-duration: 1s;
-            visibility: visible;
-        }
-        @keyframes slide {
-            0% {
-                opacity: 0;
-                transform: translateY(70%);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0%);
-            }
-        }
-        @-webkit-keyframes slide {
-            0% {
-                opacity: 0;
-                -webkit-transform: translateY(70%);
-            }
-            100% {
-                opacity: 1;
-                -webkit-transform: translateY(0%);
-            }
-        }
-        @media screen and (max-width: 768px) {
-            .col-sm-4 {
-                text-align: center;
-                margin: 25px 0;
-            }
-            .btn-lg {
-                width: 100%;
-                margin-bottom: 35px;
-            }
-        }
-        @media screen and (max-width: 480px) {
-            .logo {
-                font-size: 150px;
-            }
-        }
-    </style>
+    <link href="../static/css/landing.css"
+          th:href="@{/css/landing.css}"
+          rel="stylesheet" media="screen"/>
+      <!--JAVASCRIPT ISN'T LOADING EXTERNALLY!!-->
+    <script type="text/javascript" th:src="@{../static/js/landing.js}"></script>
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -160,12 +31,16 @@
         <div class="col-sm-8">
             <h2>About Movie Deity</h2><br>
             <h4>Movie Deity is for avid movie watchers that have an overflowing backlog of movies they want to watch.
-             Easily create a no commitment account and start adding those movies to a "watchlist". When you're in the mood for
-             something to watch, but not really sure, let Movie Deity decide. You can choose for it to pick a movie at random
-             from your entire watchlist, or choose a genre and let pick one at random from there.</h4><br>
-            <p>Needing a solution to the back and forth the creator and his wife would go through when choosing a movie for movie night,
-            Movie Deity was spawned. A genre was something easy to agree on, but a specific movie? That's a tough cookie. Now when a movie is chosen
-             at random, the only thing at blame is lines of code.</p>
+                Easily create a no commitment account and start adding those movies to a "watchlist". When you're in the
+                mood for
+                something to watch, but not really sure, let Movie Deity decide. You can choose for it to pick a movie
+                at random
+                from your entire watchlist, or choose a genre and let pick one at random from there.</h4><br>
+            <p>Needing a solution to the back and forth the creator and his wife would go through when choosing a movie
+                for movie night,
+                Movie Deity was spawned. A genre was something easy to agree on, but a specific movie? That's a tough
+                cookie. Now when a movie is chosen
+                at random, the only thing at blame is lines of code.</p>
             <br>
             <!--TAKE TO SIGNUP SECTION-->
             <button class="btn btn-default btn-lg">Sign Me Up!</button>
@@ -183,13 +58,18 @@
         </div>
         <div class="col-sm-8">
             <h2>Why Does This Exist?</h2><br>
-            <h4><strong>THE WHY:</strong> The primary goal behind this simple application is for the designer, and also developer
-            (contact info below) to gain experience and a deeper understanding with the technologies he is familiar with, along
-             with picking up a few more along the way. Those technologies being, SpringBoot as the MVC framework, Spring Security,
-             Thymeleaf as the templating language, and of course JavaScript (with JQuery) and CSS, all deployed and managed on Heroku.</h4><br>
-            <p><strong>THE LONG TERM:</strong> Basically no different from the primary goal of this application. The future of
-             this application is dependent on the pursuit of knowledge. Hopefully the pursuit of knowledge is never lacking, and as long
-             as it isn't, this application will hopefully see enhancements and overhauls.</p>
+            <h4><strong>THE WHY:</strong> The primary goal behind this simple application is for the designer/developer
+                (contact info below) to gain experience and a deeper understanding with the technologies he is familiar
+                with, along
+                with picking up a few more along the way. Those technologies being, SpringBoot as the MVC framework,
+                Spring Security,
+                Thymeleaf as the templating language, and of course JavaScript (with JQuery) and CSS, all deployed and
+                managed on Heroku.</h4><br>
+            <p><strong>THE LONG TERM:</strong> Basically no different from the primary goal of this application. The
+                future of
+                this application is dependent on the pursuit of knowledge. Hopefully the pursuit of knowledge is never
+                lacking, and as long
+                as it isn't, this application will hopefully see enhancements and overhauls.</p>
         </div>
     </div>
 </div>
@@ -244,43 +124,5 @@
 </div>
 
 <div th:replace="fragments/footer :: footer">&nbsp;</div>
-
- <!-- EXTRACT THIS JAVASCRIPT TO AN EXTERNAL FILE -->
-<script>
-    $(document).ready(function(){
-        // Add smooth scrolling to all links in navbar + footer link
-        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-            // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
-                // Prevent default anchor click behavior
-                event.preventDefault();
-
-                // Store hash
-                var hash = this.hash;
-
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 900, function(){
-
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = hash;
-                });
-            } // End if
-        });
-
-        $(window).scroll(function() {
-            $(".slideanim").each(function(){
-                var pos = $(this).offset().top;
-
-                var winTop = $(window).scrollTop();
-                if (pos < winTop + 600) {
-                    $(this).addClass("slide");
-                }
-            });
-        });
-    })
-</script>
 </body>
 </html>
