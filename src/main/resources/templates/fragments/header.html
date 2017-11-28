@@ -10,15 +10,16 @@
 <nav th:fragment="header" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#siteNav">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#myPage">Logo</a>
+            <span class="navbar-brand">Logo</span>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="collapse navbar-collapse" id="siteNav">
             <ul class="nav navbar-nav navbar-right">
+                <!--Once logged in, these items should be hidden and the 'add movie', 'spawn movie' etc should be shown instead (probably will be security related)-->
                 <li><a href="#about">ABOUT</a></li>
                 <li><a href="#services">SERVICES</a></li>
                 <li><a href="#signUp">SIGN UP</a></li>
