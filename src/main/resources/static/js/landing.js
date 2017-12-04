@@ -21,6 +21,17 @@ $(document).ready(function(){
         } // End if
     });
 
+    if ($('.form-error').length > 0) {
+        $.fn.scrollView = function () {
+            return this.each(function () {
+                $('html, body').animate({
+                    scrollTop: $(this).offset().top
+                }, 1000);
+            });
+        }
+        $('#signUp').scrollView();
+    }
+
     $(window).scroll(function() {
         $(".slideanim").each(function(){
             var pos = $(this).offset().top;

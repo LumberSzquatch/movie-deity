@@ -1,6 +1,6 @@
 package movieDeity.domain.model.controllers;
 
-import movieDeity.application.User;
+import movieDeity.domain.model.forms.UserForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,15 +19,15 @@ public class UserController {
 
     @RequestMapping("/")
     public String landing(Model model) {
-        model.addAttribute("user", new User());
+        model.addAttribute("userForm", new UserForm());
         return "landing";
     }
 
     @PostMapping("/signUp")
-    public String greetingSubmit(@Valid @ModelAttribute User user, BindingResult bindingResult) {
+    public String greetingSubmit(Model model, @Valid @ModelAttribute("userForm") UserForm userForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-
-            return "/";
+            model.addAttribute(userForm);
+            return "landing";
         }
         return "user/welcome";
     }

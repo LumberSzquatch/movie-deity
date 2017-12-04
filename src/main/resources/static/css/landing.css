@@ -128,3 +128,7 @@ footer .glyphicon {
         font-size: 150px;
     }
 }
+
+.form-error {
+    color: red;
+}
