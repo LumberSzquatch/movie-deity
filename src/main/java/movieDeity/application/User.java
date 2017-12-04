@@ -1,8 +1,16 @@
 package movieDeity.application;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.Size;
+
 public class User {
 
+    @NotEmpty(message = "Must enter a username")
+    @Size(min = 8, max = 12, message = "Username must be between 8 and 12 characters")
     private String username;
+    @NotEmpty(message = "Must enter a password")
+    @Size(min = 8, message = "Password must be at least 8 characters long")
     private String password;
     private String email;
 

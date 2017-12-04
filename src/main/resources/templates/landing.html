@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>General Landing Page</title>
+    <title>Movie Deity - About</title>
 
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}"/>
 
@@ -40,7 +40,7 @@
                 at random, the only thing at blame is lines of code.</p>
             <br>
             <!--TAKE TO SIGNUP SECTION-->
-            <a href="#signUp" class="btn btn-default">Sign me up!</a>
+            <a href="#signUp" class="btn btn-primary">Sign me up!</a>
         </div>
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-film logo"></span>
@@ -117,7 +117,7 @@
 <!-- Container (Sign Up Section) -->
 <div id="signUp" class="container-fluid bg-grey">
     <h2 class="text-center">SIGN UP</h2>
-    <form action="#" th:action="@{/signUp}" th:object="${newUser}" method="post">
+    <form action="#" th:action="@{/signUp}" th:object="${user}" method="post">
         <div class="form-group">
             <label>Username (Letters and numbers only)</label>
             <input id="username" type="text" class="form-control" placeholder="Username" th:field="*{username}" />
