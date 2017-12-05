@@ -10,6 +10,7 @@ public class UserForm {
 
     @NotNull(message = "Must enter a username")
     @Size(min = 8, max = 12, message = "Username must be between 8 and 12 characters")
+    @Pattern(regexp = Constants.USERNAME_REGEX, message = "Username can only contain letters and numbers")
     private String username;
     @NotNull(message = "Must enter a password")
     @Size(min = 8, message = "Password must be at least 8 characters long")

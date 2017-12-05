@@ -29,6 +29,7 @@ public class UserController {
             model.addAttribute(userForm);
             return "landing";
         }
+        // TODO: Head to service layer; First step is checking if username is taken (will have to fake DB side until service is complete)
         return "user/welcome";
     }
 
