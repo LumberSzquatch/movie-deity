@@ -1,6 +1,9 @@
 package movieDeity.domain.model.controllers;
 
+import movieDeity.Constants;
 import movieDeity.domain.model.forms.UserForm;
+import movieDeity.interfaces.user.RegistrationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,6 +20,9 @@ UserController handles all pages from the user directory; account, home, login, 
 @Controller
 public class UserController {
 
+    @Autowired
+    RegistrationService userRegistrationService;
+
     @RequestMapping("/")
     public String landing(Model model) {
         model.addAttribute("userForm", new UserForm());
@@ -30,6 +36,12 @@ public class UserController {
             return "landing";
         }
         // TODO: Head to service layer; First step is checking if username is taken (will have to fake DB side until service is complete)
+        if(userRegistrationService.usernameExists(userForm.getUsername())){
+            // return page with error
+            model.addAttribute("usernameTaken", Constants.USERNAME_TAKEN);
+            model.addAttribute(userForm);
+            return "landing";
+        }
         return "user/welcome";
     }
 

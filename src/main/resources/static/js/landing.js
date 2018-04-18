@@ -21,6 +21,7 @@ $(document).ready(function(){
         } // End if
     });
 
+    //If UserController has errors in BindingResult, scroll down to signUp form on page return
     if ($('.form-error').length > 0) {
         $.fn.scrollView = function () {
             return this.each(function () {
@@ -32,6 +33,7 @@ $(document).ready(function(){
         $('#signUp').scrollView();
     }
 
+    // Makes scrolling look smooth
     $(window).scroll(function() {
         $(".slideanim").each(function(){
             var pos = $(this).offset().top;
@@ -42,4 +44,11 @@ $(document).ready(function(){
             }
         });
     });
+
+    // This removes the errors, but then validation is gone for good, want a reset of some sort
+    $('#formReset').on('click', function(event) {
+        // $('#signUpForm').validator('destroy');
+        // $('#signUpForm').validator().resetForm(true); //DOESN'T WORK...
+    });
+
 });
